@@ -1,4 +1,4 @@
-Algoritmo competencia_motociclismo
+Algoritmo ejercicio9
 	Definir x, cc, c, i, p, ct, suma1, suma2, suma3, suma4, suma5 Como Entero
 	Definir  n Como Caracter
 	c=0
