@@ -1,43 +1,38 @@
-Algoritmo ejercicio2
-	Definir n, c, x, d Como Entero
-	c=0
-	Definir x1, x2, x3,x4, x5, x6 Como entero
-	Escribir "ingrese grupos de datos"
-	Leer x
-	Mientras c<x Hacer
-		Escribir "ingrese x1"
-		Leer x1
-		Escribir "ingrese x2"
-		leer x2
-		Escribir "ingrese x3"
-		Leer x3
-		Escribir "ingrese x4"
-		Leer x4
-		Escribir "ingrese x5"
-		Leer x5
-		Escribir "ingrese x6"
-		Leer x6
-		si x1<0 y x2<0 y x3<0 y x4<0 y x5<0 y x6<0 Entonces
-			Escribir "numero negativo"
-			Repetir
-				Escribir "ingrese x1"
-				Leer x1
-				Escribir "ingrese x2"
-				leer x2
-				Escribir "ingrese x3"
-				Leer x3
-				Escribir "ingrese x4"
-				Leer x4
-				Escribir "ingrese x5"
-				Leer x5
-				Escribir "ingrese x6"
-				Leer x6
-			Hasta Que x1>0 y x2>0 y x3>0 y x4>0 y x5>0 y x6>0
-		FinSi
-		media=(x1+x2+x3+x4+x5+x6)/6
-		dtp=(x1-media)^2+(x2-media)^2+(x3-media)^2+(x4-media)^2+(x5-media)^2+(x6-media)^2
-		Escribir "la media es:" media
-		Escribir "la desviacion tipica es:" dtp
-		c=c+1
+Algoritmo ejercicio2prueba2
+	Escribir "Cuantos numeros va a analizar"
+	Leer N 
+	C<-0
+	A<-0
+	X<-0
+	E<-0
+	DA<-0
+	DEE<-0
+	
+	Mientras C<N Hacer
+		Escribir "Ingresa el numero"
+		Leer X
+		Si X>0 Entonces
+			A<-A+X
+		SiNo
+			Escribir "Este no es un numero positivo"
+		Fin Si
+		M<-(A/N)
+		
+		C<-C+1
+		
 	Fin Mientras
+	
+	Mientras E<N Hacer
+		Escribir "Ingresa el numero (los mismos que vas a analizar)"
+		Leer X 
+		Si X>0
+			D<-(X-M)^2
+		FinSi
+		DA<-DA+D
+		DEE<-raiz(DA/N)
+		E<-E+1
+		
+	FinMientras
+	
+	Escribir "La Desviacion estandar es", DEE
 FinAlgoritmo
