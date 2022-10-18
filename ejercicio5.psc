@@ -1,4 +1,4 @@
-Algoritmo ejercicio
+Algoritmo ejercicio5
     Escribir "Cuantos datos va a ingresar"
     Leer a
     c<-0 
@@ -9,30 +9,27 @@ Algoritmo ejercicio
         Repetir
             Escribir "Ingresa el dato"
             Leer b
-			g<-b
             Si b>=0 Entonces
                 Si b>d
                     d<-b
                 FinSi
             SiNo
-                Imprimir "Esto no es número positivo"
+                Imprimir "Esto no es numero positivo"
             FinSi
             Si b>=0 Entonces
-				Si f<g Entonces
+				Si c = 0
+					z<-b
+				FinSi
+				Si z>f Entonces
 					m<-f
 				FinSi
-				Imprimir g
-				Imprimir f
 				f<-b
-				Imprimir g
-				Imprimir f
-				Imprimir m
             FinSi
 			c=c+1
-        Hasta Que c==a o b<0
+        Hasta Que c=a o b<0
     SiNo
-        Imprimir "Esto no es un número positivo"
+        Imprimir "Esto no es un numero positivo"
     FinSi
-    Imprimir d
-	Imprimir z
+	Imprimir "Este es el menor ",z
+    Imprimir "Este es el mayor ",d
 FinAlgoritmo

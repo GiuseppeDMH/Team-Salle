@@ -1,4 +1,4 @@
-Algoritmo ejercicio2prueba2
+Algoritmo ejercicio2
 	Escribir "Cuantos numeros va a analizar"
 	Leer N 
 	C<-0
