@@ -24,6 +24,7 @@ Algoritmo MATRIZ
 	Leer s
 	Escribir "¿Cuantos años de operación lleva la empresa?"
 	Leer x
+	Dimension resul[s]
     Dimension M[s,x];
     Para i<-1 Hasta s Con Paso 1 Hacer
         Para j<-1 Hasta x Con Paso 1 Hacer
@@ -43,5 +44,16 @@ Algoritmo MATRIZ
 			sumador<-sumador+(M[i,j])
 		FinPara
 	FinPara
-	Escribir sumador
+	ventasempleado<-ventasempleado+(M[1,1])
+	ventasempleado<-ventasempleado+(M[1,2])
+	Escribir ventasempleado
+	Para i<-1 Hasta s Con Paso 1 Hacer
+        Para j<-1 Hasta x Con Paso 1 Hacer
+			resul[i]<-resul[i]+(M[i,j])
+		FinPara
+	FinPara
+	Para i<-1 Hasta s Con Paso 1 Hacer
+		Escribir "Ventas por año del empleado ",i," son ",resul[i] 
+	FinPara
+	Escribir "Ventas totales ", sumador
 FinAlgoritmo
