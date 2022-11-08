@@ -1,8 +1,10 @@
 Funcion d<-fresa(numerito,pregunta)
-	Si j=numerito Entonces
-		Escribir pregunta
-		Leer a
-	FinSi
+	Para j<-1 Hasta 2 Con paso 1 Hacer
+		Si j=numerito Entonces
+			Escribir pregunta
+			Leer d
+		FinSi
+	FinPara	
 FinFuncion
 
 
@@ -11,12 +13,20 @@ Algoritmo Coronavirus
 	Leer e
 	
 	Dimension test[e,2]
+	Dimension preguntas[2]
+	preguntas[1]<-"Escribir nombre de usuario"
+	preguntas[2]<-"Tiene alguna comorbilidad"
+	
 	
 	Para i<-1 Hasta e Con Paso 1 Hacer
 		Para j<-1 Hasta 2 Con paso 1 Hacer
-			fresa(1,"Escribir nombre de usuario")
-			fresa(2,"Tiene alguna comorbilidad")
-			test[i,j]<-a;
+			test[i,j]<-fresa(j,preguntas[j])
 		FinPara
+    Fin Para
+    Para i<-1 Hasta 2 Con Paso 1 Hacer
+        Para j<-1 Hasta 2 Con Paso 1 Hacer
+            Escribir Sin Saltar " " test[i,j];
+        Fin Para
+        Escribir " "
     Fin Para
 FinAlgoritmo
