@@ -1,0 +1,19 @@
+Algoritmo Coronavirus
+	Escribir "Cuantos usuarios va a ingresar"
+	Leer e
+	
+	Dimension test[e,2]
+	
+	Para i<-1 Hasta e Con Paso 1 Hacer
+		Para j<-1 Hasta 2 Con paso 1 Hacer
+			Si j=1 Entonces
+				Escribir "Escribir nombre de usuario"
+				Leer a
+			FinSi
+			Si j=2 Entonces
+				Escribir "Tiene alguna comorbilidad"
+				Leer a
+			FinSi
+			test[i,j]<-a;
+		FinPara
+    Fin Para
