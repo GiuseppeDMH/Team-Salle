@@ -1,3 +1,11 @@
+Funcion d<-fresa(numerito,pregunta)
+	Si j=numerito Entonces
+		Escribir pregunta
+		Leer a
+	FinSi
+FinFuncion
+
+
 Algoritmo Coronavirus
 	Escribir "Cuantos usuarios va a ingresar"
 	Leer e
@@ -6,14 +14,9 @@ Algoritmo Coronavirus
 	
 	Para i<-1 Hasta e Con Paso 1 Hacer
 		Para j<-1 Hasta 2 Con paso 1 Hacer
-			Si j=1 Entonces
-				Escribir "Escribir nombre de usuario"
-				Leer a
-			FinSi
-			Si j=2 Entonces
-				Escribir "Tiene alguna comorbilidad"
-				Leer a
-			FinSi
+			fresa(1,"Escribir nombre de usuario")
+			fresa(2,"Tiene alguna comorbilidad")
 			test[i,j]<-a;
 		FinPara
     Fin Para
+FinAlgoritmo
