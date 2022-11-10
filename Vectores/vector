@@ -1,0 +1,18 @@
+Algoritmo vector
+	Definir i, j, T, n Como Entero;
+	Definir dia Como Caracter;
+	Definir tmp Como Real;
+	Escribir "registro de temperatura";
+	Dimension T[7];
+	Dimension T1[7];
+	Para i<-0 Hasta 6 Con Paso 1 Hacer
+		Escribir "ingrese su temperatura"," " ,"dia"," ",i, Sin Saltar;
+		Leer T[i];
+	Fin Para
+	Para i<-0 Hasta 6 Con Paso 1 Hacer
+		Escribir "REGISTRO DE TEMPERATURA" "DIA", " ",i;
+		Escribir T[i],"°C", Sin Saltar;
+		Escribir " ";
+	FinPara
+	
+FinAlgoritmo
