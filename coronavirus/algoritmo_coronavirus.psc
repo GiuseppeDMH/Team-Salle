@@ -15,7 +15,8 @@ Algoritmo Coronavirus
 	Dimension preguntas[3]
 	preguntas[1]<-"Escribir nombre de usuario"
 	preguntas[2]<-"Escribir dirección"
-	preguntas[3]<-"Escribir no recuerdo"
+	preguntas[3]<-"Escribir personas con las que vive"
+	
 	
 	
 	Para i<-1 Hasta e Con Paso 1 Hacer
@@ -42,7 +43,7 @@ Algoritmo Coronavirus
 			T[i,j]<-sa
 		FinPara
 	Fin Para
-	
+	Escribir " "
 	Escribir "Menú"
 	Escribir "Que datos desea consultar"
 	Escribir "1. Datos Personales"
@@ -50,10 +51,20 @@ Algoritmo Coronavirus
 	Escribir "3. Registros Diarios de temperatura"
 	Leer d
 	Si d = 1 Entonces
+		Dimension b[3]
+		b[1]<-"Nombre"
+		b[2]<-"Dirección"
+		b[3]<-"Cantidad de personas con las que vive"
+		Escribir "Que usuario desea consultar"
+		Leer consul
 		Para i<-1 Hasta e Con Paso 1 Hacer
-			Para j<-1 Hasta 3 Con Paso 1 Hacer
-				Escribir Sin Saltar " " test[i,j];
-			Fin Para
+			Si test[i,1] = consul Entonces
+				guarda<-i
+				Para asd<-1 Hasta 3 Con Paso 1 Hacer
+					Escribir b[asd],": ",test[guarda,asd], Sin Saltar;
+					Escribir " ";
+				FinPara
+			FinSi
 			Escribir " "
 		Fin Para
 	FinSi
