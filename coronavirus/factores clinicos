@@ -1,0 +1,55 @@
+
+	Escribir                           "DATOS DE FACTORES CLINICOS";
+	Escribir "	ESTADO DE SALUD ACTUAL";
+	Escribir "1 - ENFERMO";
+	Escribir "2 - BUENA SALUD";
+	Escribir "3 - EN TRATAMIENTO";
+	Leer S;
+	
+	//USO DE CONDICIONALES//
+	si S=1 Entonces
+		Escribir "HA SELECCIONADO ---> ENFERMO";
+	SiNo
+	FinSi
+	si S=2 Entonces
+		Escribir "HA SELECCIONADO ---> BUENA SALUD";
+	SiNo
+	FinSi
+	si S=3 Entonces
+		Escribir "HA SELECCIONADO ---> EN TRATAMIENTO";
+	SiNo
+		
+	FinSi
+	
+	Escribir "¿LE HA DADO COVID?";
+	Escribir " PRESIONE 1 -> SI  2 -> NO";
+	Leer R;
+	si R=1 Entonces
+		Escribir "¿NIVEL DE AFECTACION?";
+		Escribir "1 -> SIN COMPLICACIONES";
+		Escribir "2 -> HOSPITALIZACION";
+		Escribir "3 -> UCE (UNIDAD DE CUIDADO ESPECIALES)";
+		Escribir "4 -> UCI (UNIDAD DE CUIDADOS INTENSIVOS)";
+		Leer NF;
+		si NF=1 Entonces
+			Escribir "HA SELECCIONADO ---> SIN COMPLICACIONES";
+		SiNo
+		FinSi
+		si NF=2 Entonces
+			Escribir  "HA SELECCIONADO ---> HOSPITALIZACION";
+		SiNo
+		FinSi
+		si NF=3 Entonces
+			Escribir "HA SELECCIONADO ---> UCE (UNIDAD DE CUIDADO ESPECIALES)";
+		SiNo
+		FinSi
+		si NF=4 Entonces
+			Escribir "HA SELECCIONADO ---> UCI(UNIDAD DE CUIDADOS INTENSIVOS)";
+		SiNo
+		FinSi
+		Escribir "¿TIENE COMORBILIDADES?";
+		Escribir "PRESIONE 1 --> SI 2 --> NO";
+		Leer CM;
+		Escribir "¿ALGUN FAMILIAR TIENE COMORBILIDADES?";
+		Escribir "PRESIONE 1 --> SI 2 --> NO";
+		Leer CM;
