@@ -47,7 +47,7 @@ Algoritmo Coronavirus
 	Escribir "Que datos desea consultar"
 	Escribir "1. Datos Personales"
 	Escribir "2. Factores Clinicos"
-	Escribir "3. Registro Diario"
+	Escribir "3. Registros Diarios de temperatura"
 	Leer d
 	Si d = 1 Entonces
 		Para i<-1 Hasta e Con Paso 1 Hacer
@@ -58,10 +58,16 @@ Algoritmo Coronavirus
 		Fin Para
 	FinSi
 	Si d = 3 Entonces
+		Escribir "Que usuario desea consultar"
+		Leer cons
 		Para i<-1 Hasta e Con Paso 1 Hacer
-			Para j<-1 Hasta 3 Con Paso 1 Hacer
-				Escribir Sin Saltar " " test[i,j];
-			Fin Para
+			Si test[i,1] = cons Entonces
+				guarda<-i
+				Para asd<-1 Hasta x Con Paso 1 Hacer
+					Escribir "Dia ",asd," ",T[guarda,asd],"°C", Sin Saltar;
+					Escribir " ";
+				FinPara
+			FinSi
 			Escribir " "
 		Fin Para
 	FinSi
