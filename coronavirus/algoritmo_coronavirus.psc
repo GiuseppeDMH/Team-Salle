@@ -182,18 +182,33 @@ Algoritmo Coronavirus
 			Escribir " "
 		Fin Para
 	FinSi
+	
+	Dimension s[4]
+	s[1]<-"Ha padecido de Covid"
+	s[2]<-"Ha estado con alguien con Covid"
+	
 	Si d = 2 Entonces
-		Dimension r[2]
-		r[1]<-"Ha padecido Covid?"
-		r[2]<-"Ha tenido contacto con alguien positivo de Covid"
 		Escribir "Que usuario desea consultar"
-		Leer consul
+		Leer cons
 		Para i<-1 Hasta e Con Paso 1 Hacer
-			Si test[i,1] = consul Entonces
+			Si test[i,1] = cons Entonces
 				guarda<-i
-				Para asd<-1 Hasta k2 Con Paso 1 Hacer
-					Escribir r[asd],": ",test[guarda,asd], Sin Saltar;
+				count<-0
+				Para asd<-5 Hasta k3 Con Paso 1 Hacer
+					Si test[guarda,asd] = "1" Entonces
+						test[guarda,asd]<-"Si"
+					FinSi
+					Si test[guarda,asd] = "2" Entonces
+						test[guarda,asd]<-"No"
+					FinSi
+					count<-count+1
+					Escribir s[count], " ", test[guarda,asd], Sin Saltar;
 					Escribir " ";
+					Para free<-1 Hasta x Con Paso 1 Hacer
+						Escribir "El dia ",free,": ",Estado[guarda,free], Sin Saltar;
+						Escribir " ";
+					FinPara
+					Escribir " "
 				FinPara
 			FinSi
 			Escribir " "
