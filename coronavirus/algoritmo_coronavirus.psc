@@ -96,7 +96,7 @@ Algoritmo Coronavirus
 			Escribir "2. No"
 			Leer presente
 			Si presente = 1 Entonces
-				test[i,5]<-presente
+				test[i,5]<-ConvertirATexto(presente)
 				count<-count+1
 				Repetir
 					count<-0
@@ -124,7 +124,7 @@ Algoritmo Coronavirus
 				Hasta Que count=1
 			FinSi
 			Si presente = 2 Entonces
-				test[i,5]<-presente
+				test[i,5]<-ConvertirATexto(presente)
 				count<-count+1
 			FinSi
 			Si presente <= 0 o presente>=3 Entonces
@@ -142,11 +142,11 @@ Algoritmo Coronavirus
 			Escribir "2. No"
 			Leer presente1
 			Si presente1 = 1 Entonces
-				test[i,6]<-presente1
+				test[i,6]<-ConvertirATexto(presente1)
 				count<-count+1
 			FinSi
 			Si presente1 = 2 Entonces
-				test[i,6]<-presente1
+				test[i,6]<-ConvertirATexto(presente1)
 				count<-count+1
 			FinSi
 			Si presente1 <= 0 o presente1>=3 Entonces
