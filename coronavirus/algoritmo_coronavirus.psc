@@ -13,7 +13,7 @@ Algoritmo Coronavirus
 	Leer e
 	k<-6
 	k2<-4
-
+	
 	
 	Dimension test[e,k]
 	Dimension preguntas[k]
@@ -23,7 +23,7 @@ Algoritmo Coronavirus
 	preguntas[1]<-"Escribir nombre de usuario"
 	preguntas[2]<-"Escribir dirección"
 	preguntas[3]<-"En que localidad vive"
-	preguntas[4]<-"Escribir personas con las que vive"
+	preguntas[4]<-"Escribir con cuantas personas vive"
 	preguntas[5]<-"Tiene comorblidades"
 	preguntas[6]<-"Algun familiar sufre de alguna comorbilidad"
 	
@@ -44,24 +44,121 @@ Algoritmo Coronavirus
 				count<-0
 				Escribir "Ingrese la temperatura del usuario ",test[i,1] ," del dia ",j, Sin Saltar;
 				Leer sa;
-					T[i,j]<-sa
-					Escribir " ";
-					Si T[i,j]>=36.1 y T[i,j]<=37.2 Entonces
-						Escribir "puede ir al trabajo"
-						count=count+1
-					Fin Si
-					Si T[i,j]>=37.3 y T[i,j]<=41 Entonces
-						Escribir "no puede ir al trabajo"
-						count=count+1
-					FinSi
-					Si T[i,j]<=36 o T[i,j]>=41.1 Entonces
-						Escribir "temperatura invalida"
-						count=count-1
-					FinSi
+				T[i,j]<-sa
+				Escribir " ";
+				Si T[i,j]>=36.1 y T[i,j]<=37.2 Entonces
+					Escribir "puede ir al trabajo"
+					count=count+1
+				Fin Si
+				Si T[i,j]>=37.3 y T[i,j]<=41 Entonces
+					Escribir "no puede ir al trabajo"
+					count=count+1
+				FinSi
+				Si T[i,j]<=36 o T[i,j]>=41.1 Entonces
+					Escribir "temperatura invalida"
+					count=count-1
+				FinSi
 			Hasta Que count=1
 			T[i,j]<-sa
 		FinPara
 	Fin Para
+	
+	Escribir "Registro de Estado de Salud";
+	Escribir "1. Enfermo"
+	Escribir "2. Sano"
+	Dimension Estado[e,x];
+	Para i<-1 Hasta e Con Paso 1 Hacer
+		Para j<-1 Hasta x Con Paso 1 Hacer
+			Repetir
+				count<-0
+				Escribir "Seleccione el estado de salud del usuario ",test[i,1] ," del dia ",j, Sin Saltar;
+				Leer sason;
+				Estado[i,j]<-sason
+				Escribir " ";
+				Si Estado[i,j] <=0 o Estado[i,j]>=3
+					Escribir "Valor invalido"
+					count<-count-1
+				FinSi
+				count<-count+1
+			Hasta Que count=1
+		FinPara
+	Fin Para
+	
+	Dimension Covid[e]
+	Dimension Covid2[e]
+	
+	Escribir "Formulario Covid"
+	Para i<-1 Hasta e Con Paso 1 Hacer
+		Repetir
+			count<-0
+			Escribir "El usuario ",test[i,1], " le ha dado covid?"
+			Escribir "1. Si"
+			Escribir "2. No"
+			Leer presente
+			Si presente = 1 Entonces
+				Covid[i]<-afectacion
+				count<-count+1
+				Repetir
+					count<-0
+					Escribir "Grado de Afectación"
+					Escribir "1. Leve"
+					Escribir "2. Moderado"
+					Escribir "3. Grave"
+					Leer afectacion
+					Si presente = 1 Entonces
+						Covid2[i]<-presente
+						count<-count+1
+					FinSi
+					Si presente=2 Entonces
+						Escribir "Valor invalido"
+						count<-count+1
+					FinSi
+					Si presente=3 Entonces
+						Escribir "Valor invalido"
+						count<-count+1
+					FinSi
+					Si presente <= 0 o presente>=4 Entonces
+						Escribir "Valor invalido"
+						count<-count-1
+					FinSi
+				Hasta Que count=1
+			FinSi
+			Si presente = 2 Entonces
+				Covid[i]<-presente
+				count<-count+1
+			FinSi
+			Si presente <= 0 o presente>=3 Entonces
+				Escribir "Valor invalido"
+				count<-count-1
+			FinSi
+		Hasta Que count=1
+	Fin Para
+	
+	Dimension Covid1[e]
+	
+	Escribir "Formulario Covid"
+	Para i<-1 Hasta e Con Paso 1 Hacer
+		Repetir
+			count<-0
+			Escribir "El usuario ",test[i,1], " ha tenido contacto con alguien positivo de Covid?"
+			Escribir "1. Si"
+			Escribir "2. No"
+			Leer presente1
+			Si presente = 1 Entonces
+				Covid1[i]<-presente1
+				count<-count+1
+			FinSi
+			Si presente = 2 Entonces
+				Covid1[i]<-presente1
+				count<-count+1
+			FinSi
+			Si presente1 <= 0 o presente1>=3 Entonces
+				Escribir "Valor invalido"
+				count<-count-1
+			FinSi
+		Hasta Que count=1
+	Fin Para
+	
 	Escribir " "
 	Escribir "Menú"
 	Escribir "Que datos desea consultar"
