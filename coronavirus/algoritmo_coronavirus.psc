@@ -1,5 +1,5 @@
 Funcion d<-fresa(numerito,pregunta)
-	k<-6
+	k<-4
 	Para j<-1 Hasta k Con paso 1 Hacer
 		Si j=numerito Entonces
 			Escribir pregunta
@@ -8,14 +8,15 @@ Funcion d<-fresa(numerito,pregunta)
 	FinPara	
 FinFuncion
 
+
 Algoritmo Coronavirus
 	Escribir "Cuantos usuarios va a ingresar"
 	Leer e
-	k<-6
+	k<-4
 	k2<-4
+	k3<-6
 	
-	
-	Dimension test[e,k]
+	Dimension test[e,k3]
 	Dimension preguntas[k]
 	Escribir " "
 	Escribir "Formulario datos personales"
@@ -24,14 +25,14 @@ Algoritmo Coronavirus
 	preguntas[2]<-"Escribir dirección"
 	preguntas[3]<-"En que localidad vive"
 	preguntas[4]<-"Escribir con cuantas personas vive"
-	preguntas[5]<-"Tiene comorblidades"
-	preguntas[6]<-"Algun familiar sufre de alguna comorbilidad"
 	
 	Para i<-1 Hasta e Con Paso 1 Hacer
 		Para j<-1 Hasta k Con paso 1 Hacer
 			test[i,j]<-fresa(j,preguntas[j])
 		FinPara
     Fin Para
+	
+	
 	
 	Escribir "Cuantos dias vamos a registrar de control"
 	leer x
@@ -84,7 +85,6 @@ Algoritmo Coronavirus
 		FinPara
 	Fin Para
 	
-	Dimension Covid[e]
 	Dimension Covid2[e]
 	
 	Escribir "Formulario Covid"
@@ -96,7 +96,7 @@ Algoritmo Coronavirus
 			Escribir "2. No"
 			Leer presente
 			Si presente = 1 Entonces
-				Covid[i]<-afectacion
+				test[i,5]<-presente
 				count<-count+1
 				Repetir
 					count<-0
@@ -105,26 +105,26 @@ Algoritmo Coronavirus
 					Escribir "2. Moderado"
 					Escribir "3. Grave"
 					Leer afectacion
-					Si presente = 1 Entonces
-						Covid2[i]<-presente
+					Si afectacion = 1 Entonces
+						Covid2[i]<-afectacion
 						count<-count+1
 					FinSi
-					Si presente=2 Entonces
-						Escribir "Valor invalido"
+					Si afectacion=2 Entonces
+						Covid2[i]<-afectacion
 						count<-count+1
 					FinSi
-					Si presente=3 Entonces
-						Escribir "Valor invalido"
+					Si afectacion=3 Entonces
+						Covid2[i]<-afectacion
 						count<-count+1
 					FinSi
-					Si presente <= 0 o presente>=4 Entonces
+					Si afectacion <= 0 o presente>=4 Entonces
 						Escribir "Valor invalido"
 						count<-count-1
 					FinSi
 				Hasta Que count=1
 			FinSi
 			Si presente = 2 Entonces
-				Covid[i]<-presente
+				test[i,5]<-presente
 				count<-count+1
 			FinSi
 			Si presente <= 0 o presente>=3 Entonces
@@ -134,9 +134,6 @@ Algoritmo Coronavirus
 		Hasta Que count=1
 	Fin Para
 	
-	Dimension Covid1[e]
-	
-	Escribir "Formulario Covid"
 	Para i<-1 Hasta e Con Paso 1 Hacer
 		Repetir
 			count<-0
@@ -144,12 +141,12 @@ Algoritmo Coronavirus
 			Escribir "1. Si"
 			Escribir "2. No"
 			Leer presente1
-			Si presente = 1 Entonces
-				Covid1[i]<-presente1
+			Si presente1 = 1 Entonces
+				test[i,6]<-presente1
 				count<-count+1
 			FinSi
-			Si presente = 2 Entonces
-				Covid1[i]<-presente1
+			Si presente1 = 2 Entonces
+				test[i,6]<-presente1
 				count<-count+1
 			FinSi
 			Si presente1 <= 0 o presente1>=3 Entonces
@@ -185,8 +182,22 @@ Algoritmo Coronavirus
 			Escribir " "
 		Fin Para
 	FinSi
-	Si d=2 Entonces
-		
+	Si d = 2 Entonces
+		Dimension r[2]
+		r[1]<-"Ha padecido Covid?"
+		r[2]<-"Ha tenido contacto con alguien positivo de Covid"
+		Escribir "Que usuario desea consultar"
+		Leer consul
+		Para i<-1 Hasta e Con Paso 1 Hacer
+			Si test[i,1] = consul Entonces
+				guarda<-i
+				Para asd<-1 Hasta k2 Con Paso 1 Hacer
+					Escribir r[asd],": ",test[guarda,asd], Sin Saltar;
+					Escribir " ";
+				FinPara
+			FinSi
+			Escribir " "
+		Fin Para
 	FinSi
 	Si d = 3 Entonces
 		Escribir "Que usuario desea consultar"
