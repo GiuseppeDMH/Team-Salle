@@ -14,11 +14,43 @@
 					FinSi
 					c=c+1
 				SiNo
-					Imprimir "Esto no es n鷐ero positivo"
+					Imprimir "Esto no es n煤mero positivo"
 				FinSi
 			Hasta Que c==a o b<0
 		SiNo
-			Imprimir "Esto no es un n鷐ero positivo"
+			Imprimir "Esto no es un n煤mero positivo"
 		FinSi
 		Imprimir "numero mayor:" d
+FinAlgoritmo
+
+
+Algoritmo Rutas
+	Dimension ruta[5,8]
+	
+	Escribir "Cual es tu posici贸n actual x"
+	Leer a
+	Escribir "Cual es tu posici贸n actual y"
+	Leer b
+	ruta[a,b]<-1
+	Escribir "A que posici贸n desea llegar x"
+	Leer c
+	Escribir "A que posici贸n desea llegar x"
+	Leer d
+	ruta[c,d]<-1
+	
+	Para i<-1 Hasta 5 Con Paso 1 Hacer
+		Para j<-1 Hasta 8 Con Paso 1 Hacer
+			Escribir Sin Saltar " " ruta[i,j]
+		FinPara
+		Escribir " "
+	FinPara
+	
+	Escribir " "
+	Escribir " "
+	
+	Repetir
+		count = 1
+		
+	Hasta Que count = 1
+	
 FinAlgoritmo
