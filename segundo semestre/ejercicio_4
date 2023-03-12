@@ -1,0 +1,69 @@
+package ejercicio;
+
+import java.util.Scanner;
+
+public class ejercicio_4 {
+	public static void main(String[] args) {
+		// VARIABLES
+		int juez_1, juez_2, juez_3, juez_4;
+		int P1, P2, P3, P4;
+		boolean V1, V2, V3, V4;
+		boolean F1, F2, F3, F4;
+		// ENTRADA POR TECLADO
+System.out.println("COMPETENCIA DE DANZA");
+System.out.println("CALIFICACION DE LOS JUECES");
+System.out.println("CALIFILICACION DE 0 A 10 PUNTOS");
+System.out.print("PUNTUACION JUEZ 1:  " );
+Scanner keyboard = new Scanner (System.in);
+juez_1 = keyboard.nextInt();
+System.out.print("PUNTUACION JUEZ 2:  " );
+juez_2 = keyboard.nextInt();
+System.out.print("PUNTUACION JUEZ 3:  " );
+juez_3 = keyboard.nextInt();
+System.out.print("PUNTUACION JUEZ 4:  " );
+juez_4 = keyboard.nextInt();
+
+//OPERADORES RELACIONALES Y CONDICIONALES
+V1 = (juez_1 < 0 || juez_1 > 10);
+V2 = (juez_2 < 0 || juez_2 > 10);
+V3 = (juez_3 < 0 || juez_3 > 10);
+V4 = (juez_4 < 0 || juez_4 > 10);
+F1 = (juez_1 < juez_2 && juez_1 < juez_3 && juez_1 < juez_4);
+F2 = (juez_2 < juez_1 && juez_2 < juez_3 && juez_2 < juez_4);
+F3 = (juez_3 < juez_1 && juez_3 < juez_2 && juez_3 < juez_4 );
+F4 = (juez_4 < juez_1 && juez_4 < juez_2 && juez_4 < juez_3);
+
+// OPERACIONES ARITMETICAS
+P1 = (juez_2+juez_3+juez_4)/3 ;
+P2 = (juez_1+juez_3+juez_4)/3 ;
+P3 = (juez_1+juez_2+juez_4)/3 ;
+P4 = (juez_2+juez_3+juez_1)/3 ;
+
+// CONDICION VERDADERA
+if (V1 || V2 || V3 || V4)
+{
+	System.out.println ("PUNTUACION INVALIDA");
+} 
+
+// CONDICION FALSA
+else if (F1)
+{
+	System.out.print ("PUNTAJE TOTAL  " + P1 );
+}
+else if (F2)
+{
+	System.out.print ("PUNTAJE TOTAL  " + P2 );
+}
+else if (F3)
+{
+	System.out.print ("PUNTAJE TOTAL  " + P3 );
+}
+else if (F4)
+{
+	System.out.print ("PUNTAJE TOTAL  " + P4 );
+}
+// CIERRA ENTRADA POR TECLADO
+keyboard.close();
+}
+	
+}
